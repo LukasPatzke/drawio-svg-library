@@ -23,13 +23,16 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["typer[all]~=0.7"]
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://github.com/unknown/drawio-svg-library#readme"
-Issues = "https://github.com/unknown/drawio-svg-library/issues"
-Source = "https://github.com/unknown/drawio-svg-library"
+Documentation = "https://github.com/LukasPatzke/drawio-svg-library#readme"
+Issues = "https://github.com/LukasPatzke/drawio-svg-library/issues"
+Source = "https://github.com/LukasPatzke/drawio-svg-library"
+
+[project.scripts]
+drawio-svg-library = "drawio_svg_library.cli:app"
 
 [tool.hatch.version]
 path = "src/drawio_svg_library/__about__.py"
@@ -58,4 +61,9 @@ exclude_lines = [
   "no cov",
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
 ]
